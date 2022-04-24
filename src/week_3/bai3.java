@@ -93,10 +93,7 @@ public class bai3 {
 
 	public static void BFS(int i) {
 		Queue<Integer> queue = new LinkedList<>();
-		// reset lai parent
-		resetParent();
-		// reset lai visited
-		resetVisited();
+
 		queue.offer(i);
 		visited.set(i, true);
 		while (queue.isEmpty() == false) {
@@ -112,6 +109,8 @@ public class bai3 {
 	}
 
 	public static void timDuongDiDFS(int i, int j) {
+		//tạo list rỗng parents
+		resetParent();
 		resetVisited();
 		DFS(i);
 		if (visited.get(j) == false) {
@@ -131,7 +130,11 @@ public class bai3 {
 	}
 
 	public static void timDuongDiBFS(int i, int j) {
-			BFS(i);
+		// reset lai parent
+		resetParent();
+		// reset lai visited
+		resetVisited();
+		BFS(i);
 		if (visited.get(j) == false) {
 			System.out.println("không có đường đi");
 		} else {
@@ -169,8 +172,7 @@ public class bai3 {
 		for (int i = 0; i < mtk.size(); i++) {
 			ke.add(new ArrayList<Integer>());
 		}
-		// Tạo danh sách rỗng cho parent
-		resetParent();
+	
 		// thêm nội dung cho danh sách kề
 		for (int i = 0; i < ke.size(); i++) {
 			for (int j = 0; j < mtk.size(); j++) {
@@ -180,9 +182,9 @@ public class bai3 {
 		}
 
 		// gọi hàm DFS duyệt và in các đỉnh đã duyệt ra màn hình
-//		resetVisited();
-//		timDuongDiDFS(0, 4);
-		timDuongDiBFS(0, 4);
+
+		timDuongDiDFS(0, 3);
+//		timDuongDiBFS(0, 2);
 
 	}
 }
