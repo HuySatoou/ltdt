@@ -109,7 +109,7 @@ public class bai3 {
 	}
 
 	public static void timDuongDiDFS(int i, int j) {
-		//tạo list rỗng parents
+		// tạo list rỗng parents
 		resetParent();
 		resetVisited();
 		DFS(i);
@@ -172,7 +172,7 @@ public class bai3 {
 		for (int i = 0; i < mtk.size(); i++) {
 			ke.add(new ArrayList<Integer>());
 		}
-	
+
 		// thêm nội dung cho danh sách kề
 		for (int i = 0; i < ke.size(); i++) {
 			for (int j = 0; j < mtk.size(); j++) {

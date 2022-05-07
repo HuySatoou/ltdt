@@ -12,7 +12,7 @@ public class topo {
 
 	static void resetVisited() {
 		for (int i = 0; i < visited.size(); i++) {
-			visited.add(i, false);
+			visited.add(false);
 		}
 	}
 
