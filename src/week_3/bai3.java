@@ -68,7 +68,7 @@ public class bai3 {
 		if (diemdau1 < 0 || diemdau2 < 0 || diemdau2 > mtk.size())
 			return;
 		mtk.get(diemdau1).set(diemdau2, 1);
-		mtk.get(diemdau2).set(diemdau1, 1);
+		//mtk.get(diemdau2).set(diemdau1, 1);
 	}
 
 	// kiểm tra đỉnh x có kề đỉnh y không và trả về kết quả
@@ -151,6 +151,19 @@ public class bai3 {
 		}
 	}
 
+	public static boolean connectedComponent() {
+		int count = 0;
+		resetVisited();
+		resetParent();
+		for (int i = 0; i < ke.size(); i++) {
+			if (!(visited.get(i))) {
+				count++;
+				DFS(i);
+			}
+		}
+		return (count != 0) ? true : false;
+	}
+
 	public static void main(String[] args) {
 		// tạo đồ thị 6 đỉnh
 		themDinh();
@@ -183,8 +196,8 @@ public class bai3 {
 
 		// gọi hàm DFS duyệt và in các đỉnh đã duyệt ra màn hình
 
-		timDuongDiDFS(0, 3);
+		// timDuongDiDFS(0, 3);
 //		timDuongDiBFS(0, 2);
-
+		System.out.println(connectedComponent());
 	}
 }
